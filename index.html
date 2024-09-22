@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate Bangladesh 5th Assignment</title>
+    <!-- Lexend Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <!-- Daisy UI & Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- customize tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lexend: ['Lexend', 'sans-serif'],
+                    }
+                },
+            },
+        }
+    </script>
 </head>
-<body>
+<body class="font-lexend">
     <header>
         <div class="bg-red-50 py-5">
-            <nav class="container mx-auto flex justify-between items-center ">
+            <nav class="container mx-auto flex justify-between items-center max-w-[1280px]">
                 <div>
-                    <button class="btn bg-green-500 px-8 py-2 rounded font-bold hover:bg-black hover:text-white transition duration-300">Blog</button>
-                    <button class="hidden">Home</button>
+                    <button class="btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg md:text-xl">Blog</button>
+                    <button class="hidden btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg md:text-xl">Home</button>
                 </div>
                 <div class="flex items-center gap-2">
                     <img src="./assets/logo.png" alt="Logo...">
@@ -26,15 +42,137 @@
                     <span>BDT</span>
                 </div>
             </nav>
+            <!-- Mobile Navigation -->
+             <nav class="mx-4 hidden">
+                <div class="flex items-center justify-center mb-4 gap-2">
+                    <img src="./assets/logo.png" alt="Logo...">
+                    <h2 class="font-bold text-xl">Donate Bangladesh</h2>
+                </div>
+                <div class="container mx-auto flex justify-between items-center max-w-[1280px]">
+                    <div>
+                        <button class="btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg md:text-xl">Blog</button>
+                        <button class="hidden btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg md:text-xl">Home</button>
+                    </div>
+                    <div class="flex gap-x-1 font-bold text-gray-500">
+                        <img src="./assets/coin.png" alt="Coin...">
+                        <span>5500</span>
+                        <span>BDT</span>
+                    </div>
+                </div>
+             </nav>
+        </div>
+        <div class="flex justify-center py-8 gap-x-4">
+            <button class="btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg">Donate</button>
+            <button class="btn px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg text-gray-600">History</button>
         </div>
     </header>
     <main>
-
+        <!-- All Card Section -->
+        <section class="container mx-auto max-w-[1280px]">
+            <!-- Card 1-->
+            <div class="md:flex items-center gap-x-10 mb-10 border rounded-xl p-7 shadow-inner mx-4">
+                <div class="md:w-1/2">
+                    <img class="w-full h-[240px] sm:h-[300px] md:h-[370px]" src="./assets/noakhali.png" alt="Noakhali...">
+                </div>
+                <div class="md:w-1/2 mt-5 md:mt-0">
+                    <div class="w-32 bg-gray-100 py-2 flex justify-center gap-x-1 font-bold text-gray-500 rounded">
+                        <img src="./assets/coin.png" alt="Coin...">
+                        <span>5500</span>
+                        <span>BDT</span>
+                    </div>
+                    <h1 class="my-5 text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+                    <p class="text-gray-500 text-sm md:text-base"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full my-5"/>
+                    <button onclick="my_modal_1.showModal()" class="btn w-full text-lg md:text-xl bg-lime-400 px-8 py-2 rounded-lg font-bold hover:bg-black hover:text-white transition duration-300">Donate Now</button>
+                    <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box">
+                            <h3 class="text-2xl font-bold text-center">Congrates!</h3>
+                            <div class="flex justify-center mt-4">
+                                <img src="./assets/coin.png" alt="Coin...">
+                            </div>
+                            <p class="py-4 text-center text-gray-500">you Have Donate for Humankind</p>
+                            <h3 class="text-xl font-bold text-center">Successfully</h3>
+                            <div class="modal-action flex justify-center">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn">Close confirmation</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
+            <!-- Card 2-->
+            <div class="md:flex items-center gap-x-10 mb-10 border rounded-xl p-7 shadow-inner mx-4">
+                <div class="md:w-1/2">
+                    <img class="w-full h-[240px] sm:h-[300px] md:h-[370px]" src="./assets/feni.png" alt="Noakhali...">
+                </div>
+                <div class="md:w-1/2 mt-5 md:mt-0">
+                    <div class="w-32 bg-gray-100 py-2 flex justify-center gap-x-1 font-bold text-gray-500 rounded">
+                        <img src="./assets/coin.png" alt="Coin...">
+                        <span>5500</span>
+                        <span>BDT</span>
+                    </div>
+                    <h1 class="my-5 text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+                    <p class="text-gray-500 text-sm md:text-base"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full my-5"/>
+                    <button onclick="my_modal_2.showModal()" class="btn w-full text-lg md:text-xl bg-lime-400 px-8 py-2 rounded-lg font-bold hover:bg-black hover:text-white transition duration-300">Donate Now</button>
+                    <dialog id="my_modal_2" class="modal">
+                        <div class="modal-box">
+                            <h3 class="text-2xl font-bold text-center">Congrates!</h3>
+                            <div class="flex justify-center mt-4">
+                                <img src="./assets/coin.png" alt="Coin...">
+                            </div>
+                            <p class="py-4 text-center text-gray-500">you Have Donate for Humankind</p>
+                            <h3 class="text-xl font-bold text-center">Successfully</h3>
+                            <div class="modal-action flex justify-center">
+                                <form method="dialog">
+                                    <button class="btn">Close confirmation</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
+            <!-- Card 3-->
+            <div class="md:flex items-center gap-x-10 mb-10 border rounded-xl p-7 shadow-inner mx-4">
+                <div class="md:w-1/2">
+                    <img class="w-full h-[240px] sm:h-[300px] md:h-[370px]" src="./assets/quota-protest.png" alt="Noakhali...">
+                </div>
+                <div class="md:w-1/2 mt-5 md:mt-0">
+                    <div class="w-32 bg-gray-100 py-2 flex justify-center gap-x-1 font-bold text-gray-500 rounded">
+                        <img src="./assets/coin.png" alt="Coin...">
+                        <span>5500</span>
+                        <span>BDT</span>
+                    </div>
+                    <h1 class="my-5 text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+                    <p class="text-gray-500 text-sm md:text-base"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    <input type="text" placeholder="Type here" class="input input-bordered w-full my-5"/>
+                    <button onclick="my_modal_3.showModal()" class="btn w-full text-lg md:text-xl bg-lime-400 px-8 py-2 rounded-lg font-bold hover:bg-black hover:text-white transition duration-300">Donate Now</button>
+                    <dialog id="my_modal_3" class="modal">
+                        <div class="modal-box">
+                            <h3 class="text-2xl font-bold text-center">Congrates!</h3>
+                            <div class="flex justify-center mt-4">
+                                <img src="./assets/coin.png" alt="Coin...">
+                            </div>
+                            <p class="py-4 text-center text-gray-500">you Have Donate for Humankind</p>
+                            <h3 class="text-xl font-bold text-center">Successfully</h3>
+                            <div class="modal-action flex justify-center">
+                                <form method="dialog">
+                                    <button class="btn">Close confirmation</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
+    <footer class="bg-red-50 h-[100px]">
 
     </footer>
     <!-- JS File Added -->
      <script src="./js/main.js"></script>
+     <script src="./js/utilities.js"></script>
 </body>
 </html> 
