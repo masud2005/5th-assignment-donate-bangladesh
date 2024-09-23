@@ -60,9 +60,13 @@ function updateBalance(cardId){
 
     // Successful Massage
     my_modal.showModal();
-}
 
-// const date = new Date();
-// const year = date.toLocaleString();
-// console.log(date);
-// console.log(year);
+    // Information Added by History Tab
+    const donateTitle = document.getElementById(cardId + '-donate-title').innerText;
+    historyContainer.innerHTML += `
+        <div class="border rounded-xl mx-4 p-5 shadow-inner mb-5">
+            <h3 class="text-xl font-semibold mb-2">${donationAmount} Taka is ${donateTitle}</h3>
+            <p class="text-gray-500">Date: ${new Date()}</p>
+        </div>  
+    `;
+}
