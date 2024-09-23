@@ -1,65 +1,37 @@
 
-const totalMainBalance = document.querySelector('.main-balance');
-// const totalDonateAmount = document.getElementById('total-donate-amount');
-const totalDonateAmount = document.querySelector('.total-donate-amount');
-console.log({totalMainBalance, totalDonateAmount})
+// All Card Handle
+function updateBalance(cardId){
+    // All fields are captured
+    const totalMainBalance = document.getElementById('main-balance');
+    const totalDonationBalance = document.getElementById(cardId + '-total-amount');
+    const donationAmountField = document.getElementById(cardId + '-donation-amount');
 
-// document.getElementById('donate-btn1').addEventListener('click', function(){
-//    // Function Calling
-//    const inputValue = getInputFieldValueById('donate-amount');
-//    const amountNumber = getTotalAmountById('total-donate-amount');
-//    const mainBalance = getTotalAmountById('main-balance');
+    // convert Number from input field Balances
+    const donationAmount = parseFloat(donationAmountField.value);
 
-//     // Validation Check
-//     if(isNaN(inputValue)  || inputValue < 0 || inputValue > amountNumber){
-//         alert("You amount isn't valid!");
-//         return;
-//     }
+    // convert Number from Main Balances
+    const mainBalance = parseFloat(totalMainBalance.innerText);
 
-//    // Increase Donate Amount
-//    const currentAmount = amountNumber + inputValue;
-//    // Decrese Main Balance Amount
-//    const currentMainBalance = mainBalance - inputValue;
-//    // New Balance Upadated
-//    totalDonateAmount.innerText = currentAmount;
-//    totalMainBalance.innerText = currentMainBalance;
-//     document.getElementById('donate-amount').value = '';
-// })
- 
+    //  Validation Check
+    if(isNaN(donationAmount)  || donationAmount <= 0 || donationAmount > mainBalance){
+        alert("Invalid donation amount! Please check and try again.");
+        return;
+    }
 
+    // convert Number from donation Balances
+    const donationBalance = parseFloat(totalDonationBalance.innerText);
+    
+    // Updating the donation amount
+    const newDonationBalance = donationBalance + donationAmount;
+    totalDonationBalance.innerText = newDonationBalance;
 
-const buttons = document.querySelectorAll('.donate-btn');
+    // Updating the Main Balance amount
+    const newMainBalance = mainBalance - donationAmount;
+    totalMainBalance.innerText = newMainBalance;
 
-// console.log(buttons)
-for(i = 0; i < buttons.length; i++){
-    buttons[i].addEventListener('click', function(){
-        console.log('click');
-//         const test = document.querySelector('.total-donate-amount').innerText;
-// console.log(test)
-            // Function Calling
-        // const inputValue = getInputFieldValueById('donate-amount');
-        // const amountNumber = getTotalAmountById('total-donate-amount');
-        // const mainBalance = getTotalAmountById('main-balance');
-        // const test = document.querySelector('.donate-amount').value;
-        // console.log(test);
-        const inputValue = getInputFieldValue('.donate-amount');
-        const amountNumber = getTotalAmount('.total-donate-amount');
-        const mainBalance = getTotalAmount('.main-balance');
-        console.log({inputValue ,amountNumber, mainBalance});
+    // Empty input field
+    donationAmountField.value = '';
 
-        // Validation Check
-        if(isNaN(inputValue)  || inputValue < 0 || inputValue > mainBalance){
-            alert("You amount isn't valid!");
-            return;
-        }
-
-        // Increase Donate Amount
-        const currentAmount = amountNumber + inputValue;
-        // Decrese Main Balance Amount
-        const currentMainBalance = mainBalance - inputValue;
-        // New Balance Upadated
-        totalDonateAmount.innerText = currentAmount;
-        totalMainBalance.innerText = currentMainBalance;
-        document.querySelector('.donate-amount').value = '';
-    })
+    // Successful Massage
+    my_modal.showModal();
 }

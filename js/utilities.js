@@ -14,7 +14,7 @@ function getInputFieldValue(id){
 }
 
 function getTotalAmount(id){
-    const amountValue = document.querySelector(id).innerText;
+    const amountValue = document.getElementById(id).innerText;
     const amountNumber = parseFloat(amountValue);
     return amountNumber;
 }
