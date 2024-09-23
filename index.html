@@ -46,14 +46,14 @@
                 </div>
             </nav>
         </div>
-        <div class="flex justify-center py-4 md:py-6 lg:py-8 gap-x-4 bg-white sticky top-0">
-            <button class="btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg">Donate</button>
-            <button class="btn px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg text-gray-600">History</button>
+        <div id="btn-container" class="flex justify-center py-4 md:py-6 lg:py-8 gap-x-4 bg-white sticky top-0">
+            <button id="donate-btn" class="btn-item btn bg-lime-400 px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg">Donate</button>
+            <button id="history-btn" class="btn-item btn px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg text-gray-600">History</button>
         </div>
     </header>
     <main>
         <!-- All Card Section -->
-        <section class="container mx-auto max-w-[1280px]">
+        <section id="card-container" class="container mx-auto max-w-[1280px]">
             <!-- Card 1-->
             <div class="md:flex items-center gap-x-10 mb-10 border rounded-xl p-7 shadow-inner mx-4">
                 <div class="md:w-1/2">
@@ -123,8 +123,13 @@
                 </div>
             </dialog>
         </section>
+
+        <!-- History Section -->
+        <section id="history-container" class="container mx-auto max-w-[1280px] mb-10 hidden">
+            <!-- All Information History gues Here -->
+        </section>
     </main>
-    <footer class="bg-red-50 h-[100px]">
+    <footer class="h-[100px]">
 
     </footer>
     <!-- JS File Added -->

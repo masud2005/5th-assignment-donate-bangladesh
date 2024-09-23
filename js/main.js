@@ -1,4 +1,30 @@
 
+// Donate and History Btn Toggle 
+const cardContainer = document.getElementById('card-container');
+const historyContainer = document.getElementById('history-container');
+const historyBtn = document.getElementById('history-btn');
+const donateBtn = document.getElementById('donate-btn');
+
+// History Btn Show and Donate Btn Hide
+historyBtn.addEventListener('click', function(){
+    cardContainer.classList.add('hidden');
+    historyContainer.classList.remove('hidden');
+    historyBtn.classList.add('bg-lime-400', 'text-black');
+    donateBtn.classList.remove('bg-lime-400', 'text-black');
+    donateBtn.classList.add('text-gray-500')
+})
+
+// Donate Btn Show and History Btn Hide
+donateBtn.addEventListener('click', function(){
+    cardContainer.classList.remove('hidden');
+    historyContainer.classList.add('hidden');
+    donateBtn.classList.add('bg-lime-400', 'text-black');
+    historyBtn.classList.remove('bg-lime-400', 'text-black');
+})
+
+
+
+
 // All Card Handle
 function updateBalance(cardId){
     // All fields are captured
@@ -35,3 +61,8 @@ function updateBalance(cardId){
     // Successful Massage
     my_modal.showModal();
 }
+
+// const date = new Date();
+// const year = date.toLocaleString();
+// console.log(date);
+// console.log(year);
