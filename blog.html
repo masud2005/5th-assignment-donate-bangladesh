@@ -26,20 +26,20 @@
         }
     </script>
 </head>
-<body>
-    <header class="sticky top-0"></header>
-        <div class="bg-red-50 py-5 px-2">
+<body class="font-lexend">
+    <header class="sticky top-0 z-50">
+        <div class="py-5 px-2 bg-gradient-to-b from-red-100 to-red-50">
             <nav class="container mx-auto flex justify-between items-center max-w-[1280px]">
                 <div>
-                    <a href="./index.html" class="btn bg-lime-400 md:px-8 py-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-lg md:text-xl">Home</a>
+                    <a href="./index.html" class="btn bg-lime-400 md:px-8 py-2 px-2 rounded-md font-semibold hover:bg-black hover:text-white transition duration-300 text-sm md:text-xl">Home</a>
                 </div>
-                <div class="flex items-center gap-2 w-[165px] md:w-auto">
-                    <img src="./assets/logo.png" alt="Logo...">
-                    <h2 class="font-bold text-lg md:text-xl">Donate Bangladesh</h2>
+                <div class="flex items-center gap-2 w-[160px] md:w-auto">
+                    <img class="w-[40px] md:w-auto" src="./assets/logo.png" alt="Logo...">
+                    <h2 class="font-bold text-md md:text-xl">Donate Bangladesh</h2>
                 </div>
-                <div class="flex gap-x-1 font-bold text-gray-500">
-                    <img src="./assets/coin.png" alt="Coin...">
-                    <span  id="main-balance">7000</span>
+                <div class="flex items-center gap-x-1 font-bold text-gray-500 text-sm md:text-base">
+                    <img class="w-[22px] md:w-full" src="./assets/coin.png" alt="Coin...">
+                    <span id="main-balance">7000</span>
                     <span>BDT</span>
                 </div>
             </nav>
@@ -61,7 +61,7 @@
                 <div class="collapse-content">
                     <p>There are several ways to select an element from the Document Object Model (DOM) using JavaScript. Example:-
                     </p>
-                  <ul class="list-disc ml-10">
+                  <ul class="list-disc ml-3 md:ml-10 text-sm md:text-base mt-5">
                     <li>document.getElementById()</li>
                     <li>document.getElementsByClassName()</li>
                     <li>document.getElementsByTagName()</li>
@@ -84,7 +84,7 @@
                 <div class="collapse-content">
                   <p>Manipulating an element's attributes and styles using the DOM allows developers to dynamically change the appearance and behavior of elements on a web page.
                 </p>
-                <p class="font-semibold">1. Manipulating Attributes</p>
+                <p class="font-semibold mt-5">1. Manipulating Attributes</p>
                 <ul class="list-disc ml-10">
                     <li>getAttribute()</li>
                     <li>setAttribute()</li>
