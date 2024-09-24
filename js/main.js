@@ -1,31 +1,32 @@
 
-// Donate and History Btn Toggle 
+
 const cardContainer = document.getElementById('card-container');
 const historyContainer = document.getElementById('history-container');
-const historyBtn = document.getElementById('history-btn');
-const donateBtn = document.getElementById('donate-btn');
 
-// History Btn Show and Donate Btn Hide
-historyBtn.addEventListener('click', function(){
-    cardContainer.classList.add('hidden');
-    historyContainer.classList.remove('hidden');
-    historyBtn.classList.add('bg-lime-400', 'text-black');
-    donateBtn.classList.remove('bg-lime-400', 'text-black');
-    donateBtn.classList.add('text-gray-500')
-})
+// Change Donate and History Btn with Function
+const buttons = document.querySelectorAll('.btn-item');
+for(const btn of buttons){
+    btn.addEventListener('click', function(){
+        // When the Btn is Clicked, that Button will be Active
+        for(const activeBtn of buttons){
+            activeBtn.classList.remove('bg-lime-400', 'text-black');
+            activeBtn.classList.add('text-gray-500');
+        }
+        btn.classList.remove('text-gray-500');
+        btn.classList.add('bg-lime-400', 'text-black');
 
-// Donate Btn Show and History Btn Hide
-donateBtn.addEventListener('click', function(){
-    cardContainer.classList.remove('hidden');
-    historyContainer.classList.add('hidden');
-    donateBtn.classList.add('bg-lime-400', 'text-black');
-    historyBtn.classList.remove('bg-lime-400', 'text-black');
-})
+        // Card Container and History Container Hidden and Visible
+        if(btn.innerText === "History"){
+            showHistoryContainer('history-container');
+        }else if(btn.innerText === "Donate"){
+            showCardContainer('card-container');
+        }
+    })
+}
 
 
 
-
-// All Card Handle
+// Control All Cards with Functions
 function updateBalance(cardId){
     // All fields are captured
     const totalMainBalance = document.getElementById('main-balance');

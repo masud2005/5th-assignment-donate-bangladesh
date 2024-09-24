@@ -1,27 +1,14 @@
 
-
-//Function >>> Input Field Value Catch and Convert Number
-// function getInputFieldValueById(id){
-//     const inputFieldValue = document.getElementById(id).value;
-//     const inputFieldNumber = parseFloat(inputFieldValue);
-//     return inputFieldNumber;
-// }
-
-function getInputFieldValue(id){
-    const inputFieldValue = document.querySelector(id).value;
-    const inputFieldNumber = parseFloat(inputFieldValue)
-    return inputFieldNumber;
+//Show History Container and Hide Card Container
+function showHistoryContainer(id){
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById('card-container').classList.add('hidden');
+    return;
 }
 
-function getTotalAmount(id){
-    const amountValue = document.getElementById(id).innerText;
-    const amountNumber = parseFloat(amountValue);
-    return amountNumber;
+// Show Card Container and Hide History Container
+function showCardContainer(id){
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById('history-container').classList.add('hidden');
+    return;
 }
-
-// Function >>> Total Amount Value Catch and Convert Number
-// function getTotalAmountById(id){
-//     const amountValue = document.getElementById(id).innerText;
-//     const amountNumber = parseFloat(amountValue);
-//     return amountNumber;
-// }
