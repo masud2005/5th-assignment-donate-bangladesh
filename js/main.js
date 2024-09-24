@@ -1,5 +1,4 @@
 
-
 const cardContainer = document.getElementById('card-container');
 const historyContainer = document.getElementById('history-container');
 
@@ -25,7 +24,6 @@ for(const btn of buttons){
 }
 
 
-
 // Control All Cards with Functions
 function updateBalance(cardId){
     // All fields are captured
@@ -33,28 +31,24 @@ function updateBalance(cardId){
     const totalDonationBalance = document.getElementById(cardId + '-total-amount');
     const donationAmountField = document.getElementById(cardId + '-donation-amount');
 
-    // convert Number from input field Balances
+    // convert String to Number
     const donationAmount = parseFloat(donationAmountField.value);
-
-    // convert Number from Main Balances
     const mainBalance = parseFloat(totalMainBalance.innerText);
+    const donationBalance = parseFloat(totalDonationBalance.innerText);
 
     //  Validation Check
     if(isNaN(donationAmount)  || donationAmount <= 0 || donationAmount > mainBalance){
         alert("Invalid donation amount! Please check and try again.");
         return;
     }
-
-    // convert Number from donation Balances
-    const donationBalance = parseFloat(totalDonationBalance.innerText);
     
     // Updating the donation amount
     const newDonationBalance = donationBalance + donationAmount;
-    totalDonationBalance.innerText = newDonationBalance;
+    totalDonationBalance.innerText = newDonationBalance.toFixed(2);
 
     // Updating the Main Balance amount
     const newMainBalance = mainBalance - donationAmount;
-    totalMainBalance.innerText = newMainBalance;
+    totalMainBalance.innerText = newMainBalance.toFixed(2);
 
     // Empty input field
     donationAmountField.value = '';
